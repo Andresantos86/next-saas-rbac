@@ -11,7 +11,7 @@ export function Header() {
 
         <Slash className="text-border size-3 -rotate-[24deg]" />
 
-        <OrganizationSwitcher />
+        {/* <OrganizationSwitcher /> */}
       </div>
       <div className="flex items-center gap-4">
         <ProfileButton />
