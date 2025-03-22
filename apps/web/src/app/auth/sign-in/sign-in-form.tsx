@@ -12,8 +12,9 @@ import Link from 'next/link'
 import { FormEvent, useState, useTransition } from 'react'
 import { singInWithEmailAndPassword } from './actions'
 import { useFormState } from '@/hooks/use-form-state'
-import { useRouter } from 'next/router'
+
 import { signInWithGithub } from '../actions'
+import { useRouter } from 'next/navigation'
 
 export default function SignInForm() {
   // const [{ errors, message, sucess }, formAction, isPending] = useActionState(
