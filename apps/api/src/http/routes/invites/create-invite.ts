@@ -54,7 +54,7 @@ export async function createInvite(app: FastifyInstance) {
 
         if (
           organization.shouldAttachUsersByDomain &&
-          domain !== organization.domain
+          domain === organization.domain
         ) {
           throw new BadRequestError(
             `Users with '${domain}' domain will join your organization automatically on login.`
