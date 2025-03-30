@@ -14,9 +14,10 @@ import { singInWithEmailAndPassword } from './actions'
 import { useFormState } from '@/hooks/use-form-state'
 
 import { signInWithGithub } from '../actions'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function SignInForm() {
+  const searchParams = useSearchParams()
   // const [{ errors, message, sucess }, formAction, isPending] = useActionState(
   //   singInWithEmailAndPassword,
   //   {
@@ -45,7 +46,12 @@ export default function SignInForm() {
         )}
         <div className="space-y-1">
           <Label htmlFor="email">E-mail</Label>
-          <Input id="email" type="email" name="email"></Input>
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            defaultValue={searchParams.get('email') ?? ''}
+          ></Input>
           {errors?.email && <ErrorField message={errors.email[0]} />}
         </div>
         <div className="space-y-1">

@@ -4,7 +4,7 @@ import { Button } from './ui/button'
 import { NavLink } from './nav-link'
 
 export async function Tabs() {
-  const currentOrg = getCurrentOrg()
+  const currentOrg = await getCurrentOrg()
 
   const permissions = await ability()
   const canUpdateOrganization = permissions?.can('update', 'Organization')
